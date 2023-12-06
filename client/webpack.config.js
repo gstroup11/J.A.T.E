@@ -18,11 +18,11 @@ module.exports = () => {
       // TODO: Add HtmlWebpackPlugin for each entry point
       new HtmlWebpackPlugin({
         template: './index.html', // Path to HTML file
-        title: 'Simple-Text-Editor', // Title of HTML page
+        title: 'J.A.T.E', // Title of HTML page
       }),
       new InjectManifest({
         swSrc: './src-sw.js', // Path to your service worker file
-        swDest: 'service-worker.js', // Output service worker file name
+        swDest: 'src-sw.js', // Output service worker file name
       }),
       new WebpackPwaManifest({
         fingerprints: false,
@@ -32,6 +32,8 @@ module.exports = () => {
         description: 'Take notes with J.A.T.E, using JavaScript syntax highlighting.',
         background_color: '#225ca3',
         theme_color: '#225ca3',
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'), // Path to app icon
